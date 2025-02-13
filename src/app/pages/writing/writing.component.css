@@ -4,6 +4,10 @@
   overflow: hidden;
   position: relative;
   animation: backgroundShift 15s ease-in-out infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .kawaii-container::before {
@@ -19,32 +23,40 @@
 
 .content-wrapper {
   width: 100%;
-  min-height: 100vh;
+  padding: 1rem;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
   position: relative;
+  z-index: 1;
 }
 
 .letter-container {
   position: relative;
+  width: 100%;
   max-width: 800px;
-  width: 90%;
-  margin: 2rem auto;
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+  margin: 1rem auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 .letter {
   background: rgba(255, 255, 255, 0.97);
   border-radius: 30px;
-  padding: 3rem;
+  padding: 2.5rem 1.5rem;
   position: relative;
   transform-style: preserve-3d;
   box-shadow: 
     0 10px 30px rgba(0,0,0,0.1),
     0 0 30px rgba(255,192,203,0.2) inset;
+  width: 100%;
+  box-sizing: border-box;
+  
+  @media (min-width: 768px) {
+    padding: 3rem;
+  }
 }
 
 .bow {
@@ -87,25 +99,38 @@
 .letter-content {
   position: relative;
   z-index: 1;
+  max-width: 100%;
 }
 
 .title {
   font-family: 'Dancing Script', cursive;
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: transparent;
   background: linear-gradient(45deg, #ff69b4, #ff1493);
   -webkit-background-clip: text;
   background-clip: text;
   text-align: center;
-  margin-bottom: 2rem;
+  margin: 0 0 2rem 0;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
   animation: titleGlow 2s ease-in-out infinite;
+  word-wrap: break-word;
+
+  @media (min-width: 768px) {
+    font-size: 3rem;
+  }
 }
 
 .letter-body {
-  font-size: 1.2rem;
-  line-height: 1.8;
+  font-size: 1rem;
+  line-height: 1.6;
   color: #4a4a4a;
+  padding: 0 0.5rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    padding: 0;
+  }
 }
 
 .letter-body p {
@@ -113,6 +138,7 @@
   position: relative;
   animation: fadeIn 0.5s ease-out forwards;
   opacity: 0;
+  word-wrap: break-word;
 }
 
 .letter-body p:nth-child(1) { animation-delay: 0.3s; }
@@ -121,26 +147,38 @@
 
 .signature {
   font-family: 'Dancing Script', cursive;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #ff69b4;
   text-align: right;
-  margin-top: 3rem;
+  margin-top: 2rem;
   animation: signatureWrite 1s ease-out forwards;
   animation-delay: 1.2s;
   opacity: 0;
+  padding-right: 0.5rem;
+
+  @media (min-width: 768px) {
+    font-size: 2rem;
+    margin-top: 3rem;
+    padding-right: 0;
+  }
 }
 
-/* Decorative Elements */
 .corner-decoration {
   position: absolute;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   pointer-events: none;
+  font-size: 1.5rem;
+  
+  @media (min-width: 768px) {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+  }
 }
 
 .corner-decoration::before {
   content: '🌸';
-  font-size: 2rem;
   position: absolute;
   animation: cornerFloat 3s ease-in-out infinite;
 }
@@ -163,14 +201,19 @@
   position: absolute;
   opacity: 0.6;
   animation: float 4s ease-in-out infinite;
+  font-size: 1.5rem;
+
+  @media (min-width: 768px) {
+    font-size: 2rem;
+  }
 }
 
 .love-button {
   position: relative;
-  margin-top: 2rem;
+  margin: 2rem 0;
   background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
   border: none;
-  padding: 20px;
+  padding: 15px;
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 
@@ -178,10 +221,18 @@
     0 0 30px rgba(255,105,180,0.3);
   z-index: 2;
   transition: all 0.3s ease;
+
+  @media (min-width: 768px) {
+    padding: 20px;
+  }
 }
 
 .button-text {
-  font-size: 2rem;
+  font-size: 1.8rem;
+
+  @media (min-width: 768px) {
+    font-size: 2rem;
+  }
 }
 
 .love-button:hover {
@@ -199,64 +250,127 @@
   height: 100%;
   pointer-events: none;
   z-index: 1000;
+  overflow: hidden;
 }
 
 @keyframes backgroundShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 @keyframes glowPulse {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 0.8; }
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
 }
 
 @keyframes titleGlow {
-  0%, 100% { text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
-  50% { text-shadow: 2px 2px 8px rgba(255,105,180,0.3); }
+  0%, 100% {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  }
+  50% {
+    text-shadow: 2px 2px 8px rgba(255,105,180,0.3);
+  }
 }
 
 @keyframes wiggleBow {
-  0%, 100% { transform: translateX(-50%) rotate(0deg); }
-  25% { transform: translateX(-50%) rotate(-5deg); }
-  75% { transform: translateX(-50%) rotate(5deg); }
+  0%, 100% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  25% {
+    transform: translateX(-50%) rotate(-5deg);
+  }
+  75% {
+    transform: translateX(-50%) rotate(5deg);
+  }
 }
 
 @keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes signatureWrite {
-  0% { opacity: 0; transform: translateX(-20px) rotate(-5deg); }
-  100% { opacity: 1; transform: translateX(0) rotate(0deg); }
+  0% {
+    opacity: 0;
+    transform: translateX(-20px) rotate(-5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 @keyframes cornerFloat {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  50% { transform: translate(5px, -5px) rotate(10deg); }
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(5px, -5px) rotate(10deg);
+  }
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
+/* Additional Mobile Optimizations */
+@media (max-width: 480px) {
   .letter {
-    padding: 2rem;
+    padding: 2rem 1rem;
   }
 
   .title {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .letter-body {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
   }
 
   .signature {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+  }
+
+  .bow {
+    width: 60px;
+    height: 30px;
+    top: -15px;
+  }
+
+  .bow::before,
+  .bow::after {
+    width: 30px;
+    height: 30px;
+  }
+
+  .bow-center {
+    width: 15px;
+    height: 15px;
+  }
+
+  .corner-decoration {
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
   }
 }
