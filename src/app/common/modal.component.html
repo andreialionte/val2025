@@ -1,0 +1,20 @@
+<div class="celebration-modal">
+    <h2 mat-dialog-title class="title">💖 Wow! You're Amazing! 💖</h2>
+    <mat-dialog-content class="content">
+      <p>Would u want to be my valentine? 🌟</p>
+      <div class="hearts-container">
+        <!-- <span *ngFor="let heart of hearts">{{heart}}</span> -->
+        @for (heart of hearts; track $index) {
+            <span>{{heart}}</span>
+        }
+      </div>
+    </mat-dialog-content>
+    <div class="div-buttons">
+      <button [routerLink]="['/writing']" mat-raised-button color="primary" class="buton-princpal" (click)="closeDialog()">
+        Yes 💝
+      </button>
+      <button  class="buton-secundar" (click)="randomPositionButton()">
+        No 
+      </button>
+    </div>
+  </div>

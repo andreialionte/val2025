@@ -1,0 +1,57 @@
+<div class="kawaii-container">
+    <!-- Main content wrapper -->
+    <div class="content-wrapper">
+      <!-- Floating hearts that will be animated with GSAP -->
+      <div class="hearts-wrapper">
+        <div class="heart" *ngFor="let i of [1,2,3,4,5,6,7,8]" #heart></div>
+      </div>
+  
+      <!-- Main Hello Kitty -->
+      <div class="hello-kitty-container" #kittyContainer>
+        <div class="hello-kitty" #kitty>
+          <div class="ear left"></div>
+          <div class="ear right"></div>
+          <div class="face">
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+            <div class="nose"></div>
+            <div class="whisker left-whiskers">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="whisker right-whiskers">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div class="bow" #bow>
+            <div class="bow-center"></div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Animated flowers -->
+      <div class="flowers-container">
+        <div class="flower" *ngFor="let i of [1,2,3,4,5]" #flower>
+          <div class="petals">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="center"></div>
+        </div>
+      </div>
+  
+      <!-- Love button -->
+      <button class="love-button" #loveButton (click)="triggerLoveAnimation()">
+        <span class="button-text">💖</span>
+      </button>
+    </div>
+  
+    <!-- Sparkles container -->
+    <div class="sparkles-container" #sparklesContainer></div>
+</div>

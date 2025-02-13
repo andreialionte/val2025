@@ -1,0 +1,245 @@
+.kawaii-container {
+    min-height: 100vh;
+    background: linear-gradient(45deg, #ffcad4 0%, #ffc8dd 50%, #bde0fe 100%);
+    overflow: hidden;
+    position: relative;
+}
+
+.content-wrapper {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.hello-kitty-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hello-kitty {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.face {
+    width: 150px;
+    height: 150px;
+    background: white;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    margin: 0 auto; /* Center the face horizontally */
+}
+
+.eye {
+    width: 8px;
+    height: 20px;
+    background: black;
+    position: absolute;
+    top: 70px;
+    border-radius: 50%;
+}
+
+.eye.left { left: 45px; }
+.eye.right { right: 45px; }
+
+.nose {
+    width: 12px;
+    height: 12px;
+    background: #ffb7c5;
+    position: absolute;
+    top: 85px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+}
+
+.whisker {
+    position: absolute;
+    top: 85px;
+}
+
+.whisker span {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: #000;
+    margin: 10px;
+}
+
+.whisker.left-whiskers {
+    left: 10px;
+}
+
+.whisker.left-whiskers span {
+    transform-origin: right;
+}
+
+.whisker.left-whiskers span:nth-child(1) { transform: rotate(-15deg); }
+.whisker.left-whiskers span:nth-child(2) { transform: rotate(0deg); }
+.whisker.left-whiskers span:nth-child(3) { transform: rotate(15deg); }
+
+.whisker.right-whiskers {
+    right: 10px;
+}
+
+.whisker.right-whiskers span {
+    transform-origin: left;
+}
+
+.whisker.right-whiskers span:nth-child(1) { transform: rotate(15deg); }
+.whisker.right-whiskers span:nth-child(2) { transform: rotate(0deg); }
+.whisker.right-whiskers span:nth-child(3) { transform: rotate(-15deg); }
+
+.ear {
+    width: 50px;
+    height: 70px;
+    background: white;
+    position: absolute;
+    top: -20px;
+    border-radius: 50px 50px 0 0;
+}
+
+.ear.left { left: 30px; }
+.ear.right { right: 30px; }
+
+.bow {
+    width: 80px;
+    height: 40px;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bow:before,
+.bow:after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #ff69b4;
+    border-radius: 50%;
+}
+
+.bow:before { left: -10px; }
+.bow:after { right: -10px; }
+
+.bow-center {
+    width: 20px;
+    height: 20px;
+    background: #ff69b4;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.heart {
+    width: 30px;
+    height: 30px;
+    background: #ff69b4;
+    position: absolute;
+    transform: rotate(45deg);
+    opacity: 0;
+}
+
+.heart:before,
+.heart:after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background: #ff69b4;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart:before { left: -15px; }
+.heart:after { top: -15px; }
+
+.flowers-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.flower {
+    position: absolute;
+    bottom: 20px;
+}
+
+.petals {
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+.petals span {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 20px 0;
+    transform-origin: bottom right;
+}
+
+.petals span:nth-child(1) { transform: rotate(0deg); }
+.petals span:nth-child(2) { transform: rotate(72deg); }
+.petals span:nth-child(3) { transform: rotate(144deg); }
+.petals span:nth-child(4) { transform: rotate(216deg); }
+.petals span:nth-child(5) { transform: rotate(288deg); }
+
+.center {
+    width: 15px;
+    height: 15px;
+    background: #ffd700;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.love-button {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff69b4;
+    border: none;
+    padding: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+.button-text {
+    font-size: 2rem;
+}
+
+.sparkle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.sparkles-container { //...
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+    overflow: hidden;
+}
